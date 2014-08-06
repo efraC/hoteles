@@ -7,5 +7,5 @@ function startAPP()
 
 function alerta(mensaje)
 {
-	alert(mensaje);
+	
 }
