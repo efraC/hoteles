@@ -34,8 +34,8 @@ ul,li
 	top: 15%;
 	left: 10%;
 	border-radius: 5px;
-	-webkit-box-shadow: 0 0 2px 1px #666;
-	box-shadow: 0 0 2px 1px #666;
+	-webkit-box-shadow: 0 0 5px 3px #666;
+	box-shadow: 0 0 5px 3px #666;
 }
 .login-cabezero
 {
@@ -55,5 +55,7 @@ ul,li
     width: 69%;
     display: inline-block;
     position: absolute;
-    margin-top: 5%;
+    margin-top: 3%;
+    font-family: 'Lato';
+    font-size: 23px;
 }
