@@ -1,5 +1,3 @@
-$(document).on('ready',startAPP);
-function startAPP()
-{
-	alert("");
-}
+$(document).on('ready',function(){
+
+});
