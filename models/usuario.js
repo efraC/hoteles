@@ -1,6 +1,8 @@
-/*var Schema = require('mongoose').Schema
- 
-var user_schema = new Schema({
-  userName      :   String,
-  userPassword  :   String
-})*/
+var mongoose = require('mongoose'),
+    Schema   = mongoose.Schema;
+
+var usuarios_schema = new Schema({
+  usuario      :   String,
+  contrasena  :   String
+})
+module.exports = mongoose.model('usuarios', usuarios_schema)

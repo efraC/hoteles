@@ -5,12 +5,20 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-//var routes = require('./routes/index');
-//var users = require('./routes/users');
-var login = require('./controllers/indexController')
+//CONEXION A BD
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/spa', function(err, res) {
+    if(err) throw err;
+    console.log('Conectado a la base de datos...');
+});
+
+
+
+var login = require('./routes/login');
+var loginCtrl = require('./controllers/loginController')
 
 var app = express();
-app.get('/', login.loginIndex);
+var models = require('./models/usuario')(app, mongoose);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,8 +33,31 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', routes);
-//app.use('/users', users);
+app.use('/', login);
+app.get('/usuarios',loginCtrl.findAllUsers)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
