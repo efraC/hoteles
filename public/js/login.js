@@ -12,14 +12,19 @@ function entrar()
 			usuario: $("#txt-usuario").val(),
 			contrasena : $("#txt-contrasena").val()
 		};
-	 $.ajax({
+		$.ajax({
 		  type: "POST",
-		  dataType:"application/json", 
+		  contenType: 'JSON', 
 		  url: "/entrar",
 		  data: userObject
 		})
-	  .done(function( msg )
-	  {
-	    alert( "Data Saved: " + msg );
-	  });
+		 .success(function (response) 
+		{
+			window.location = response.redirect;
+			console.log(response);
+		})
+		.error(function (xhr, status) 
+		{
+			console.log(status);
+		});
 }

@@ -33,22 +33,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-
 var models = require('./models/usuario')(app, mongoose);
 // Al principio
 var login  = require('./controllers/loginController')
+var menu  = require('./controllers/menuController')
 // Routes
 app.get('/', login.login)
+app.get('/menu',menu.menu)
 app.post('/entrar', login.entrar)
-
-
-
-
-
-
-
-
-
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

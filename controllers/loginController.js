@@ -22,7 +22,7 @@ exports.entrar = function(req,res,next)
 		}
 		if(usuario && usuario_req == usuario.usuario && contrasena_req == usuario.contrasena)
 		{
-			  res.send("Usuario CORRECTO");
+			res.json({ redirect : '/menu' });
 		}
 		else
 		{
