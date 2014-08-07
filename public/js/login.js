@@ -2,10 +2,24 @@ $(document).on('ready',startAPP);
 
 function startAPP()
 {	
-	$("h1").on('click', alerta );	
+	$("#btn-entrar").on('click', entrar );	
 }
 
-function alerta(mensaje)
+function entrar()
 {
-	
+	var userObject = 
+		{
+			usuario: $("#txt-usuario").val(),
+			contrasena : $("#txt-contrasena").val()
+		};
+	 $.ajax({
+		  type: "POST",
+		  dataType:"application/json", 
+		  url: "/entrar",
+		  data: userObject
+		})
+	  .done(function( msg )
+	  {
+	    alert( "Data Saved: " + msg );
+	  });
 }
