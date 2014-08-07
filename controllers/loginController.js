@@ -10,15 +10,16 @@ exports.login = function (req, res, next)
 //GET - Return all tvshows in the DB
 exports.entrar = function(req, res) 
 {
-	var reqUSUARIO = req.query;//obtenemos el usuario que trata de entrar al sistema
-		console.log(req.param);
+	//obtenemos el usuario que trata de entrar al sistema
+ 	var usuario_req = req.params.usuario;
+ 	var contrasena_req = req.params.contrasena;
     usuarios.findOne({'usuario':'root'},function(err, usuario)
     {
 		if(err)
 		{
 			res.send(500, err.message);
 		}
-		if(reqUSUARIO.usuario == usuario.usuario && reqUSUARIO.contrasena == usuario.contrasena)
+		if(usuario_req.usuario == usuario.usuario && contrasena_req.contrasena == usuario.contrasena)
 		{
 			res.status(200).jsonp(usuario);
 		}else
@@ -27,3 +28,4 @@ exports.entrar = function(req, res)
 	 	}
     });
 };
+

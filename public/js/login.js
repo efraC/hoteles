@@ -12,7 +12,7 @@ function entrar()
 			usuario: $("#txt-usuario").val(),
 			contrasena : $("#txt-contrasena").val()
 		};
-		 $.post( '/entrar', { usuario: "John", contrasena: "2pm" },function(result)
+		 $.post( '/entrar', { usuario: "John", contrasena: "123" },function(result)
 		 {
 			alert(result.error);
 	 	});
