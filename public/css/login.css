@@ -20,39 +20,34 @@ ul,li
 	position: absolute;
 	top:0;
 	left:0;
-	background: url('http://wallpaperfeed.com/wp-content/uploads/2013/12/perfect-hotel-wallpaper-hd-widescreen.jpg');/*#2980b9;*/
+	background: url('/img/background-login.jpeg');/*#2980b9;*/
 	background-size: cover;
 	color:#888;
 }
 .login-contenido
 {
-	width: 33%;
-	height: 24%;
+	width: 350px;
+	height: 120px;
 	background: rgba(255, 255, 255, 0.66);
-	content: '';
 	position: absolute;
 	top: 15%;
 	left: 10%;
 	border-radius: 5px;
-	/* border: 1px solid #333; */
-	/* -webkit-box-shadow: 0 0 5px 3px #666; */
-	/* box-shadow: 0 0 5px 3px #666; */
 }
-.login-cabezero
+.login-icono 
 {
-
-}
-.login-icono {
     width: 30%;
     text-align: center;
     display: inline-block;
 }
-.login-icono span {
+.login-icono span 
+{
     font-size: 50px;
     margin-top:10px;
     color:#666;
 }
-.login-bienvenida {
+.login-bienvenida 
+{
     width: 69%;
     display: inline-block;
     position: absolute;
