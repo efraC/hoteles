@@ -28,14 +28,15 @@ ul,li
 {
 	width: 33%;
 	height: 24%;
-	background: #fff;
+	background: rgba(255, 255, 255, 0.66);
 	content: '';
 	position: absolute;
 	top: 15%;
 	left: 10%;
 	border-radius: 5px;
-	-webkit-box-shadow: 0 0 5px 3px #666;
-	box-shadow: 0 0 5px 3px #666;
+	/* border: 1px solid #333; */
+	/* -webkit-box-shadow: 0 0 5px 3px #666; */
+	/* box-shadow: 0 0 5px 3px #666; */
 }
 .login-cabezero
 {
@@ -58,4 +59,9 @@ ul,li
     margin-top: 3%;
     font-family: 'Lato';
     font-size: 23px;
+}
+.login-inputs {
+    width: 65%;
+    margin-left: 30%;
+    margin-top: 5%;
 }
