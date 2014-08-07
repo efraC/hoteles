@@ -12,6 +12,7 @@ mongoose.connect('mongodb://localhost/spa', function(err, res) {
     if(err) throw err;
     console.log('Conectado a la base de datos...');
 });
+<<<<<<< HEAD
 */
 
 var app = express();
@@ -19,6 +20,11 @@ var app = express();
 //var models = require('./models/usuario')(app, mongoose);
 
 =======
+>>>>>>> origin/master
+=======
+
+
+var app = express();
 >>>>>>> origin/master
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
