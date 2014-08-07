@@ -12,8 +12,14 @@ function entrar()
 			usuario: $("#txt-usuario").val(),
 			contrasena : $("#txt-contrasena").val()
 		};
-		 $.post( '/entrar', { usuario: "John", contrasena: "123" },function(result)
-		 {
-			alert(result.error);
-	 	});
+	 $.ajax({
+		  type: "POST",
+		  dataType:"application/json", 
+		  url: "/entrar",
+		  data: userObject
+		})
+	  .done(function( msg )
+	  {
+	    alert( "Data Saved: " + msg );
+	  });
 }

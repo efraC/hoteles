@@ -8,24 +8,28 @@ exports.login = function (req, res, next)
 }
 
 //GET - Return all tvshows in the DB
-exports.entrar = function(req, res) 
+exports.entrar = function(req,res,next) 
 {
 	//obtenemos el usuario que trata de entrar al sistema
- 	var usuario_req = req.params.usuario;
- 	var contrasena_req = req.params.contrasena;
-    usuarios.findOne({'usuario':'root'},function(err, usuario)
+ 	var usuario_req = req.body.usuario;
+ 	var contrasena_req = req.body.contrasena;
+
+    usuarios.findOne({'usuario': usuario_req },function(err, usuario)
     {
 		if(err)
 		{
 			res.send(500, err.message);
 		}
-		if(usuario_req.usuario == usuario.usuario && contrasena_req.contrasena == usuario.contrasena)
+		if(usuario_req == usuario.usuario && contrasena_req == usuario.contrasena)
 		{
-			res.status(200).jsonp(usuario);
+			return res.send("Usuario CORRECTO");
 		}else
 		{
-	 		res.json({ error : true })
-	 	}
+			return res.json({ error : true });
+		}
     });
+    return res.json({ error : true });
+    console.log("hola :C");
+  
 };
 

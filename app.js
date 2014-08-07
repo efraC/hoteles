@@ -15,9 +15,23 @@ mongoose.connect('mongodb://localhost/spa', function(err, res) {
 
 
 var app = express();
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.engine( '.html', require('ejs').__express );
+app.set('view engine', 'html');
+
+app.use(favicon());
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(cookieParser());
+app.use(session({secret: 'keyboard cat'}));
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+
+
 var models = require('./models/usuario')(app, mongoose);
-
-
 // Al principio
 var login  = require('./controllers/loginController')
 // Routes
@@ -32,38 +46,6 @@ app.post('/entrar', login.entrar)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.engine( '.html', require('ejs').__express );
-app.set('view engine', 'html');
-
-app.use(favicon());
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
-app.use(cookieParser());
-app.use(session({secret: 'keyboard cat'}));
-app.use(express.static(path.join(__dirname, 'public')));
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
