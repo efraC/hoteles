@@ -2,10 +2,18 @@ $(document).on('ready',startAPP);
 
 function startAPP()
 {	
-	$("h1").on('click', alerta );	
+	$("#btn-entrar").on('click', entrar );	
 }
 
-function alerta(mensaje)
+function entrar()
 {
-	
+	var userObject = 
+		{
+			usuario: $("#txt-usuario").val(),
+			contrasena : $("#txt-contrasena").val()
+		};
+		 $.post( '/entrar', { usuario: "John", contrasena: "2pm" },function(result)
+		 {
+			alert(result.error);
+	 	});
 }
