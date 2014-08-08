@@ -3,11 +3,32 @@ $(document).on('ready',startAPP);
 function startAPP()
 {	
 	$("#btn-entrar").on('click', entrar );
-	$("#txt-contrasena").on('keydown',entrar);	
+	//$("#txt-contrasena").on('keydown',entrar);	
 }
 function entrar()
 {
-	var userObject = 
+	$(".login").removeClass("shake");
+	var response = 	controller.call(
+	{
+		 controller:"/entrar",
+		 ajaxType:'POST',
+		 parametros:
+		 {
+		    usuario: $("#txt-usuario").val(),
+		   	contrasena : $("#txt-contrasena").val()
+		 },
+		 typereturn : returnType.JSON
+	});
+	console.log(response);
+	if(response.error)
+	{
+		$(".login").addClass("shake");
+
+	}else
+	{
+		window.location = response.redirect;
+	}
+		/*var userObject = 
 		{
 			usuario: $("#txt-usuario").val(),
 			contrasena : $("#txt-contrasena").val()
@@ -33,5 +54,5 @@ function entrar()
 		.error(function (xhr, status) 
 		{
 			console.log(status);
-		});
+		});*/
 }
