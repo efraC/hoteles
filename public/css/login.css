@@ -9,6 +9,9 @@ body
 {
 	background-image: url('/img/background-login.jpeg');
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
 }
 .login
 {
@@ -59,4 +62,13 @@ body
 	display: table;
 	margin: 10px auto;
 	width: 70%;
+}
+
+@media screen and (max-width:540px){
+    .login
+    {
+    	width: 100%;
+    	right: 0;
+    }
+
 }

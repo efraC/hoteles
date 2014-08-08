@@ -30,6 +30,7 @@ exports.entrar = function(req,res,next)
 		}
 		if(usuario && usuario_req == usuario.usuario && contrasena_req == usuario.contrasena)
 		{
+			req.session.nombreUsuario = usuario_req;
 			req.session.usuario = true;
 			res.json({ redirect : '/menu' });
 		}
