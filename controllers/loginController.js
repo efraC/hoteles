@@ -4,7 +4,15 @@ var usuarios  = mongoose.model('usuarios');
 //RENDER THE VIEW LOGIN
 exports.login = function (req, res, next)
 {
-  res.render('login')
+	if(req.session.usuario)
+	{
+		res.redirect('/menu');
+   		//res.json({ redirect : '/menu' });
+ 	}else
+ 	{
+ 		res.render('login');
+ 	}
+
 }
 
 //GET - Return all tvshows in the DB
@@ -22,6 +30,7 @@ exports.entrar = function(req,res,next)
 		}
 		if(usuario && usuario_req == usuario.usuario && contrasena_req == usuario.contrasena)
 		{
+			req.session.usuario = true;
 			res.json({ redirect : '/menu' });
 		}
 		else
