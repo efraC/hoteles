@@ -7,27 +7,32 @@ function startAPP()
 }
 function entrar()
 {
-	$(".login").removeClass("shake");
-	var response = 	controller.call(
+	controller.call(
 	{
-		 controller:"/entrar",
+		 url:"/entrar",
 		 ajaxType:'POST',
-		 parametros:
-		 {
-		    usuario: $("#txt-usuario").val(),
-		   	contrasena : $("#txt-contrasena").val()
-		 },
+		 parametros:{
+		    	usuario: $("#txt-usuario").val(),
+		   		contrasena : $("#txt-contrasena").val()
+		 	},
 		 typereturn : returnType.JSON
-	});
-	console.log(response);
-	if(response.error)
-	{
-		$(".login").addClass("shake");
+	},
+	function(response){
+		if(response.error)
+		{
+			$(".login").addClass("shake");
+			
+			delay( $(".login").removeClass("shake") )
 
-	}else
-	{
-		window.location = response.redirect;
-	}
+		}else
+		{
+			window.location = response.redirect;
+		}
+	});
+
+	
+
+	
 		/*var userObject = 
 		{
 			usuario: $("#txt-usuario").val(),
