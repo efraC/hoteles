@@ -6,8 +6,42 @@
 	<link rel="stylesheet" type="text/css" href="/css/menu.css">
 </head>
 <body>
-	<h1> Bienvenido usuario : <%= title %> </h1>
-
-	<p> <button id="btn-salir" class="btn btn-default">SALIR</button> </p>
+	<section class="global">
+		<nav id="menu" class="animated">
+			<span class="close">&times;</span>
+			<div>
+				<ul id="menu-contenido">
+					<!-- menu items -->
+					<li class="menu-items">
+						<!-- item contenido -->
+						<div class="item-contenido">
+							<span class="fa-home"></span>
+							<span class="item-nombre">Home</span>
+						</div>
+					</li>
+					<li class="menu-items">
+						<div class="item-contenido">
+							<span class="fa-cogs"></span>
+							<span class="item-nombre">Settings</span>
+						</div>
+					</li>
+					<li class="menu-items">
+						<div class="item-contenido">
+							<span class="fa fa-flag"></span>
+							<span class="item-nombre">Menu</span>
+							<span class="fa-angle-down flecha"></span>
+						</div>
+					</li>
+					<li class="menu-items">
+						<div class="item-contenido" id="btn-salir">
+							<span class="fa-sign-out"></span>
+							<span class="item-nombre">Salir</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</section>
+	
 </body>
 </html>

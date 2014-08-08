@@ -4,3 +4,59 @@
 @import url("style.css");
 
 /*  --------------------------  */
+
+body{
+	 background-color: #5E7A9B; /*#2DAE92;*/
+}
+#menu{
+	position: fixed;
+	top:50px;
+	width: 200px;
+	padding: 20px 10px;
+	background-color: #f5f5f5;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.close{
+	position: absolute;
+	top: 7;
+	right: 7;
+	font-size: 16px;
+	line-height: 10px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.menu-items{
+	padding: 7px 5px;
+	border-radius: 5px;
+
+	-webkit-transition: background-color 0.3s ease-in-out,color 0.3s ease-in-out;
+	   -moz-transition: background-color 0.3s ease-in-out,color 0.3s ease-in-out;
+		-ms-transition: background-color 0.3s ease-in-out,color 0.3s ease-in-out;
+		 -o-transition: background-color 0.3s ease-in-out,color 0.3s ease-in-out;
+			transition: background-color 0.3s ease-in-out,color 0.3s ease-in-out;
+}
+.menu-items:hover{
+	background-color: #2DAE92;
+	color: #f5f5f5;
+}
+.item-nombre{
+	font-family: 'Open Sans';
+	font-size: 14px;
+}
+.selected,
+.selected:hover{
+	background-color: #1D8B73;
+	color: #f5f5f5;
+}
+.item-contenido{
+	position: relative;
+	padding: 0 5px;
+}
+
+.item-contenido .flecha{
+	position: absolute;
+	right: 5px;
+	top: 50%;
+	margin-top: -5px;
+}
