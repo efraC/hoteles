@@ -20,7 +20,14 @@ function entrar()
 		})
 		 .success(function (response) 
 		{
-			window.location = response.redirect;
+			if(response.error)
+			{
+				alert("error");
+			}else
+			{
+				window.location = response.redirect;
+			}
+		
 			console.log(response);
 		})
 		.error(function (xhr, status) 

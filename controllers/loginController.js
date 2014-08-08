@@ -32,7 +32,7 @@ exports.entrar = function(req,res,next)
 		{
 			req.session.nombreUsuario = usuario_req;
 			req.session.usuario = true;
-			res.json({ redirect : '/menu' });
+			res.json({ redirect : '/menu', error: false });
 		}
 		else
 		{
