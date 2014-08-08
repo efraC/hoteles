@@ -65,7 +65,7 @@ function delay( funcion, tiempo ){
 		if(funcion && typeof funcion == 'function')
 			funcion();
 		else
-			funcion
-		
+			$.globalEval(funcion);
+
 	}, time);
 }

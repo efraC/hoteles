@@ -11,7 +11,7 @@
 </head>
 <body>
 	<section class="login animated">
-		<div class="login-header">
+		<div class="login-header clearfix">
 			<div class="login-icono">
 				<span class="fa-user"></span>
 			</div>
@@ -20,13 +20,16 @@
 			</div>
 		</div>
 		<div class="login-body">
+			<div id="login-mensaje">
+				<h5>Usuario y/o Contraseña incorrecta</h5>
+			</div>
 			<div class="login-inputs">
 				<input id="txt-usuario" type="textbox" placeholder="Usuario"></input>
 				<input id="txt-contrasena" type="password" placeholder="Contraseña"></input>
 			</div>
 		</div>
-		<div class="login-footer">
-			<button id="btn-entrar" class="btn btn-default">Entrar</button>
+		<div class="login-footer clearfix">
+			<button id="btn-entrar" class="btn btn-blue">Entrar</button>
 		</div>
 	</section>
 </body>

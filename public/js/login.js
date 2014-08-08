@@ -20,9 +20,10 @@ function entrar()
 	function(response){
 		if(response.error)
 		{
-			$(".login").addClass("shake");
+			$(".login").removeClass("shake")
 			
-			delay( $(".login").removeClass("shake") )
+			delay( '$(".login").addClass("shake");', 1 )
+			$('#login-mensaje').show();
 
 		}else
 		{

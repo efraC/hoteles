@@ -18,7 +18,7 @@ body
 	position: absolute;
 	top: 20%;
 	right: 9%;
-	width: 350px;
+	width: 420px;
 	color:#888;
 	border-radius: 5px;
 	background-color: rgba(255, 255, 255, 0.66);
@@ -31,12 +31,6 @@ body
 .login-header
 {
 	padding: 10px 0;
-}
-.login-header:after
-{
-	content: '';
-	display: table;
-	clear: both;
 }
 .login-header div{
 	float: left;
@@ -66,6 +60,20 @@ body
 	display: table;
 	margin: 10px auto;
 	width: 70%;
+	height: 33px; 
+}
+.login-footer{
+	padding: 0px 15% 10px;
+}
+.login-footer #btn-entrar {
+    display: table;
+    margin: 0 auto;
+    width: 60%;
+}
+#login-mensaje{
+	display: none;
+	color: #d9534f;
+	text-align: center;
 }
 
 @media screen and (max-width:540px){
