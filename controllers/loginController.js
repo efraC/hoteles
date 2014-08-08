@@ -15,7 +15,7 @@ exports.login = function (req, res, next)
 
 }
 
-//GET - Return all tvshows in the DB
+//VALIDA SI ES POSIBLE ENTRAR A LA APLICACION
 exports.entrar = function(req,res,next) 
 {
 	//obtenemos el usuario que trata de entrar al sistema
@@ -41,3 +41,9 @@ exports.entrar = function(req,res,next)
     });
 };
 
+//SALIR DE LA APLICACION
+exports.salir = function(req,res,next) 
+{
+	req.session.destroy();
+	res.json({ redirect : '/' });
+};

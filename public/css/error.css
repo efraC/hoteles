@@ -1,0 +1,25 @@
+/*=============================
+	CSS con Estilos Generales
+  =============================*/
+@import url("style.css");
+
+/*  --------------------------  */
+body
+{
+
+	background: #5E7A9B;/*#00a2d3;*/
+	overflow-x: hidden;
+}
+.error
+{
+	font-family: 'Open Sans';
+	color: #fff;
+	font-size: 70px;
+	text-align: center;
+}
+.title-error {
+    color: #fff;
+    font-family: 'Open Sans';
+    font-size: 30px;
+    text-align: center;
+}

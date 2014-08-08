@@ -41,10 +41,11 @@ var menu  = require('./controllers/menuController')
 app.get('/', login.login)
 app.get('/menu',menu.menu)
 app.post('/entrar', login.entrar)
+app.post('/salir',login.salir)
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
+    var err = new Error('Lo que buscas no esta :c');
     err.status = 404;
     next(err);
 });
@@ -58,7 +59,7 @@ if (app.get('env') === 'development') {
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,
-            error: err
+            error: err.status
         });
     });
 }
