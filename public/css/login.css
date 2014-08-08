@@ -22,6 +22,11 @@ body
 	color:#888;
 	border-radius: 5px;
 	background-color: rgba(255, 255, 255, 0.66);
+
+     -webkit-transition: width 500ms ease-in-out;
+    	-moz-transition: width 500ms ease-in-out;
+    	  -o-transition: width 500ms ease-in-out;
+    		 transition: width 500ms ease-in-out;
 }
 .login-header
 {
@@ -39,7 +44,6 @@ body
 .login-icono 
 {
     width: 29.99%;
-   
     text-align: center;
 }
 .login-icono span 
