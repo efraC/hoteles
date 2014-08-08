@@ -72,3 +72,16 @@ body
     }
 
 }
+@media screen and (max-width:320px){
+    .login-icono 
+	{
+		display: none;
+	}
+	.login-bienvenida 
+	{
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+
+}
