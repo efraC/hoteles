@@ -13,8 +13,8 @@ function entrar()
 		 url:"/entrar",
 		 ajaxType:'POST',
 		 parametros:{
-		    	usuario: $("#txt-usuario").val(),
-		   		contrasena : $("#txt-contrasena").val()
+		    	usuario: $.trim($("#txt-usuario").val()),
+		   		contrasena :$.trim($("#txt-contrasena").val())
 		 	},
 		 typereturn : returnType.JSON
 	},
