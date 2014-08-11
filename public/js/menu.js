@@ -2,13 +2,21 @@ $(document).on('ready',startAPP);
 
 function startAPP()
 {	
-	$("#btn-salir").on('click', salir );
+
 	$("#menu").on('click', '.close', function(){
 		$("#menu").removeClass("fadeOutLeftBig")
 		delay( '$("#menu").addClass("fadeOutLeftBig");', 1 )
 	});	
 
-	$("#menu").on('click', '.item-contenido', abrir_contenido );	
+	$("#menu").on('click', '.item-contenido',function()
+		{
+			if( $(this).hasClass("salir") )
+			{
+				salir();
+				return;
+			}
+		 	abrir_contenido(this);
+		});	
 }
 
 function salir()
@@ -22,7 +30,14 @@ function salir()
 }
 
 //Funcion para abrir contenido del menu
-function abrir_contenido()
+function abrir_contenido(controlador)
 {
-	
+	var controlador_ = $(controlador).attr('controller');
+	if(controlador_)
+	{
+		controller.call({
+				url: controlador_ ,
+				selector:'views'
+			});
+	}
 }

@@ -1,5 +1,17 @@
 var mongoose = require('mongoose');
-var usuarios  = mongoose.model('cliente');
+//var cliente  = mongoose.model('cliente');
+
+//RENDER THE VIEW LOGIN
+exports.view = function (req, res, next)
+{
+  if(req.session.usuario)
+  {
+    res.render('cliente');
+  }else
+  {
+    res.render('login');
+  }
+}
 
 //GUARDAR NUEVO CLIENTE
 exports.guardarCliente = function(req,res,next) 

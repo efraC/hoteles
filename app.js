@@ -37,9 +37,11 @@ var models = require('./models/usuario')(app, mongoose);
 // Al principio
 var login  = require('./controllers/loginController')
 var menu  = require('./controllers/menuController')
+var cliente = require('./controllers/clienteController')
 // Routes
 app.get('/', login.login)
 app.get('/menu',menu.menu)
+app.get('/cliente',cliente.view)
 app.post('/entrar', login.entrar)
 app.post('/salir',login.salir)
 
