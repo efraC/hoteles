@@ -19,7 +19,8 @@ var controller = {
 		    parametros : {},
 		   	typereturn: returnType.DEFAULT,
 		   	showMessage: true,
-		   	async: false
+		   	async: false,
+			selector:''
 		}
 	    var result = null;
 	    configuracion = $.extend( configuracion , options );
@@ -31,7 +32,6 @@ var controller = {
 			    data: configuracion.parametros,
 			    type: configuracion.ajaxType,
 			    async: configuracion.async,
-			    selector:'',
 			    dataType: 'text'
 			})
 			.success(function (response){
