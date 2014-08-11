@@ -1,14 +1,33 @@
-<section class="view">
-<section class="view-cabecero"></section>
+<script type="text/javascript" src="/js/cliente.js"></script>
+
+<section class="view cliente">
+<section class="view-header clearfix">
+	<div class="view-titulo">
+		<span class="fa-flag"></span>
+		<span>Clientes</span>
+	</div>
+	<div class="view-acciones">
+		<span class="fa-refresh"></span>
+		<span class="fa-minus"></span>
+		<span class="fa-times"></span>
+	</div>
+</section>
 	<section class="view-body">
 		<div class="div-busqueda">
 			<div class="input-busqueda clearfix">
 				<span class="fa-search"></span>
-				<input class="busqueda" enter type="textbox" placeholder="Busqueda" controller="/cliente/buscar"></input>
+				<input class="busqueda" enter="buscar_cliente()" type="textbox" placeholder="Busqueda" controller="/cliente/buscar"></input>
 			</div>
 		</div>
-
-		<button class="btn btn-default">Hola mundo</button>
+		<div>
+			<input type="text">
+			<input type="text">
+		</div>
 	</section>
-<section class="view-footer"></section>
+<section class="view-footer clearfix">
+	<div class="botones">
+		<button class="btn btn-blue">Guardar</button>
+		<button class="btn btn-red">Cancelar</button>
+	</div>
+</section>
 </section>

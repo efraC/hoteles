@@ -2,49 +2,12 @@ $(document).on('ready', inicializar );
 
 //Funcion para inicializar eventos
 function inicializar(){
-
 	$("input").off();
 	$('input[enter]').on('keyup',function(e){
 		
 		//Validamos si la tecla presionada fue enter
 		if( e.keyCode == 13 || e.which == 13){
-			//Guardamos el input
-			var $input = $(this);
-
-			//Validamos si el enter es para busqueda
-			if( $input.hasClass("busqueda") )
-			{
-				if( $input.val().trim() == '')
-					return;
-
-				controller.search({
-						parametros:{
-							nombre : $input.val()
-						},
-						url: $input.attr("controller")
-					},function(response){
-						//Pintamos el resultado de la busqueda
-						var $div_busqueda = $input.parents('.div-busqueda')
-						$('.busqueda-resultado').remove();
-						var $resultado = $('<div/>',{'class': 'busqueda-resultado'})
-						$div_busqueda.append( 
-							$resultado.append('<ul class="busqueda-ul" >')
-							);
-
-						$.each(response, function(index, resultado){
-							$('.busqueda-ul')
-								.append('<li>' +
-										'<span class="fa-user"></span>' +
-											'<span>' + resultado.nombre + '</span>' +
-											'<span>' +
-										'</li>')
-						})
-
-						console.log(response);
-					});
-			}
-			else
-				$.globalEval( $input.attr('enter') )
+			$.globalEval( $(this).attr('enter') )
 		}
 		else if( $(this).hasClass("busqueda") )
 		{
