@@ -3,6 +3,7 @@ $(document).on('ready',startAPP);
 function startAPP()
 {	
 	$("#btn-entrar").on('click', entrar );
+	$('#txt-usuario').focus();
 	//$("#txt-contrasena").on('keydown',entrar);	
 }
 function entrar()

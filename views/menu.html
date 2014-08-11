@@ -5,9 +5,11 @@
 	<meta http-equiv="Expires" content="0" />
 	<meta http-equiv="Pragma" content="no-cache" />
 
-	<title>Menu | <%= title %></title>.
+	<title>Menu | <%= title %></title>
 	<script type="text/javascript" src="/js/utils/v11-jquery.min.js"></script>
+	<script type="text/javascript" src="/js/utils/core.js"></script>
 	<script type="text/javascript" src="/js/menu.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="/css/menu.css">
 	<script type="text/javascript">
 		if(history.forward(1))
@@ -16,7 +18,7 @@
 </head>
 <body>
 	<section class="global">
-		<nav id="menu" class="animated">
+		<nav id="menu" class="animated delay">
 			<span class="close">&times;</span>
 			<div>
 				<ul id="menu-contenido">
@@ -35,7 +37,7 @@
 						</div>
 					</li>
 					<li class="menu-items">
-						<div class="item-contenido">
+						<div id="clientes" class="item-contenido" controller="/clientes">
 							<span class="fa fa-flag"></span>
 							<span class="item-nombre">Clientes</span>
 							<span class="fa-angle-down flecha"></span>
@@ -50,6 +52,11 @@
 				</ul>
 			</div>
 		</nav>
+
+		<section id="views">
+
+		</section>
+
 	</section>
 </body>
 </html>
