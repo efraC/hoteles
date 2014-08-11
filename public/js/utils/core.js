@@ -5,26 +5,50 @@ function inicializar(){
 
 	$("input").off();
 	$('input[enter]').on('keyup',function(e){
-		var $input = $(this);
-		if( e.keyCode == 13 || e.which == 13)
 		
+		//Validamos si la tecla presionada fue enter
+		if( e.keyCode == 13 || e.which == 13){
+			//Guardamos el input
+			var $input = $(this);
+
+			//Validamos si el enter es para busqueda
 			if( $input.hasClass("busqueda") )
-					controller.buscar(
-					{
-					parametros:
-					{
-						nombre : $input.val()
-					},
-					url: $input.attr("controller")
-					},function(response)
-					{
-						console.log($input.outerHeight());
-						console.log($input.outerWidth());
+			{
+				if( $input.val().trim() == '')
+					return;
+
+				controller.search({
+						parametros:{
+							nombre : $input.val()
+						},
+						url: $input.attr("controller")
+					},function(response){
+						//Pintamos el resultado de la busqueda
+						var $div_busqueda = $input.parents('.div-busqueda')
+						$('.busqueda-resultado').remove();
+						var $resultado = $('<div/>',{'class': 'busqueda-resultado'})
+						$div_busqueda.append( 
+							$resultado.append('<ul class="busqueda-ul" >')
+							);
+
+						$.each(response, function(index, resultado){
+							$('.busqueda-ul')
+								.append('<li>' +
+											resultado.nombre +
+										'</li>')
+						})
+
 						console.log(response);
 					});
+			}
 			else
 				$.globalEval( $input.attr('enter') )
-
+		}
+		else if( $(this).hasClass("busqueda") )
+		{
+			if( $(this).val().trim() == '')
+				$('.busqueda-resultado').remove();
+		}
 	});
 
 	
@@ -101,11 +125,11 @@ var controller = {
 	    //Regresamos el jotason
 	    return result;
     },
-    buscar: function(options,callback)
-    {
-    	if( !options )
+    search: function(options,callback){
+    	//Validamos que se mandaran las funciones
+    	if( !options && typeof options != 'object')
 		{
-			console.log("Options is undefined in controller.call()");
+			console.log("Options is undefined in controller.search()");
 			return;
 		}
 		var configuracion = {
@@ -121,7 +145,9 @@ var controller = {
 				typereturn : returnType.JSON
 			});
 
-		callback(response);
+		//Hacemos el callback de la busqueda
+		if( callback && typeof callback == 'function')
+			callback(response);
     }
 }
 
