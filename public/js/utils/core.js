@@ -31,9 +31,21 @@ var controller = {
 			    data: configuracion.parametros,
 			    type: configuracion.ajaxType,
 			    async: configuracion.async,
+			    selector:'',
 			    dataType: 'text'
 			})
 			.success(function (response){
+				if( selector )
+				{
+					configuracion.showMessage = false;
+					configuracion.typereturn = returnType.DEFAULT;
+					
+					if( $('#' + selector) )
+						$('#' + selector).html( response )
+
+					else if( $('.' + selector) )
+						$('.' + selector).html( response )
+				}
 	            if(configuracion.showMessage && configuracion.typereturn != returnType.JSON)
 	            {
 					//mensaje.notificacion(response);
@@ -55,26 +67,6 @@ var controller = {
 
 	    //Regresamos el jotason
 	    return result;
-    },
-    loadView:function(options,callback)
-    {
-    	if( !options )
-		{
-			console.log("Options is undefined in controller.call()");
-			//mensaje.notificacion("Options is undefined in controller.call()",{titulo:'FrameWorkError',tipo:'error',icono:'icon-spam'});
-			return;
-		}
-		var configuracion = {
-		    ajaxType : 'GET',
-		    parametros : {},
-		   	typereturn: returnType.DEFAULT,
-		   	showMessage: true,
-		   	async: false,
-		   	loadInDiv:''
-		}
-		var result = null;
-	    configuracion = $.extend( configuracion , options );
-
     }
 }
 
