@@ -35,16 +35,16 @@ var controller = {
 			    dataType: 'text'
 			})
 			.success(function (response){
-				if( selector )
+				if( configuracion.selector )
 				{
 					configuracion.showMessage = false;
 					configuracion.typereturn = returnType.DEFAULT;
 					
-					if( $('#' + selector) )
-						$('#' + selector).html( response )
+					if( $('#' + configuracion.selector) )
+						$('#' + configuracion.selector).html( response )
 
-					else if( $('.' + selector) )
-						$('.' + selector).html( response )
+					else if( $('.' + configuracion.selector) )
+						$('.' + configuracion.selector).html( response )
 				}
 	            if(configuracion.showMessage && configuracion.typereturn != returnType.JSON)
 	            {
