@@ -34,7 +34,9 @@ function inicializar(){
 						$.each(response, function(index, resultado){
 							$('.busqueda-ul')
 								.append('<li>' +
-											resultado.nombre +
+										'<span class="fa-user"></span>' +
+											'<span>' + resultado.nombre + '</span>' +
+											'<span>' +
 										'</li>')
 						})
 
