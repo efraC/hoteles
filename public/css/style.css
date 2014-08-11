@@ -21,23 +21,23 @@
 *,
 *:after,
 *:before{
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
-	-webkit-user-select: none;
-  	   -moz-user-select: none;
+  -webkit-user-select: none;
+       -moz-user-select: none;
         -ms-user-select: none;
          -o-user-select: none;
             user-select: none;
 
     -webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;   
-	        box-sizing: border-box;
+     -moz-box-sizing: border-box;   
+          box-sizing: border-box;
 }
 h1,h2,h3,h4,h5,h6
 {
-	font-family: 'Open Sans';
+  font-family: 'Open Sans';
 }
 .clearfix:after{
   content: '';
@@ -227,4 +227,41 @@ input:focus
 .btn-red.disabled.active,.btn-red[disabled].active,{
   background-color: #d9534f;
   border-color: #d43f3a;
+}
+
+/*======================
+    Estilos Busqueda
+  ======================*/
+.div-busqueda{
+  background-color: #fff;
+  padding: 3px;
+  width: 50%;
+  position: relative;
+}
+.input-busqueda span{
+  display: inline-block;
+  margin-left: 15px;
+  color: #888;
+}
+.input-busqueda .busqueda{
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 70%;
+}
+.input-busqueda .busqueda:focus
+{
+  border-color:none;
+  outline:0;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+.busqueda-resultado {
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    width: 100%;
+    padding: 10px 5px;
+    border-top: 1px solid#ccc;
 }
