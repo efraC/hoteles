@@ -24,5 +24,5 @@ function salir()
 //Funcion para abrir contenido del menu
 function abrir_contenido()
 {
-
+	
 }
