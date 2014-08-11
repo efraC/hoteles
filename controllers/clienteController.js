@@ -46,5 +46,12 @@ exports.guardarCliente = function(req,res,next)
 //BUSQUEDA DEL CLIENTE
 exports.buscar = function(req,res,next)
 {
-  res.json([{ nombre : 'giovanny'},{nombre:'efra'}]);
+   var nombrecliente_req = req.body.nombre;
+   var clientes  = mongoose.model('clientes');
+   clientes.find(function(err, clientes) 
+   {
+      if(err) res.send(500, err.message);
+      res.status(200).jsonp(clientes);
+   })
+  //res.json([{ nombre : 'giovanny'},{nombre:'efra'}]);
 }

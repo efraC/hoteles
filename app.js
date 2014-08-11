@@ -15,7 +15,6 @@ mongoose.connect('mongodb://localhost/spa', function(err, res) {
 
 
 var app = express();
-var models = require('./models/usuario')(app, mongoose);
 
 var app = express();
 // view engine setup
@@ -31,9 +30,9 @@ app.use(cookieParser());
 app.use(session({secret: 'keyboard cat'}));
 app.use(express.static(path.join(__dirname, 'public')));
 
+var user_model = require('./models/usuario')(app, mongoose);
+var cliente_model = require('./models/cliente')(app,mongoose);
 
-
-var models = require('./models/usuario')(app, mongoose);
 // Al principio
 var login  = require('./controllers/loginController')
 var menu  = require('./controllers/menuController')
