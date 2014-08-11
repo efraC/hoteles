@@ -1,3 +1,14 @@
+$(document).on('ready', inicializar );
+
+//Funcion para inicializar eventos
+function inicializar(){
+
+	$('input[enter]').on('keydown',function(e){
+		if( e.keyCode == 13 || e.which == 13)
+			$.globalEval( $(this).attr('enter') )
+	});
+}
+
 /*Giovanny Reyes Ojeda.*/
 var returnType = 
 {
