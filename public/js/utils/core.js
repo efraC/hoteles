@@ -55,8 +55,29 @@ var controller = {
 
 	    //Regresamos el jotason
 	    return result;
+    },
+    loadView:function(options,callback)
+    {
+    	if( !options )
+		{
+			console.log("Options is undefined in controller.call()");
+			//mensaje.notificacion("Options is undefined in controller.call()",{titulo:'FrameWorkError',tipo:'error',icono:'icon-spam'});
+			return;
+		}
+		var configuracion = {
+		    ajaxType : 'GET',
+		    parametros : {},
+		   	typereturn: returnType.DEFAULT,
+		   	showMessage: true,
+		   	async: false,
+		   	loadInDiv:''
+		}
+		var result = null;
+	    configuracion = $.extend( configuracion , options );
+
     }
 }
+
 
 function delay( funcion, tiempo ){
 	var time = ( tiempo && typeof tiempo == 'number' ? tiempo : 2000)	
