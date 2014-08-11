@@ -3,10 +3,31 @@ $(document).on('ready', inicializar );
 //Funcion para inicializar eventos
 function inicializar(){
 
+	$("input").off();
 	$('input[enter]').on('keyup',function(e){
+		var $input = $(this);
 		if( e.keyCode == 13 || e.which == 13)
-			$.globalEval( $(this).attr('enter') )
+		
+			if( $input.hasClass("busqueda") )
+					controller.buscar(
+					{
+					parametros:
+					{
+						nombre : $input.val()
+					},
+					url: $input.attr("controller")
+					},function(response)
+					{
+						console.log($input.outerHeight());
+						console.log($input.outerWidth());
+						console.log(response);
+					});
+			else
+				$.globalEval( $input.attr('enter') )
+
 	});
+
+	
 }
 
 /*Giovanny Reyes Ojeda.*/
@@ -50,12 +71,13 @@ var controller = {
 				{
 					configuracion.showMessage = false;
 					configuracion.typereturn = returnType.DEFAULT;
-					
 					if( $('#' + configuracion.selector) )
 						$('#' + configuracion.selector).html( response )
 
 					else if( $('.' + configuracion.selector) )
 						$('.' + configuracion.selector).html( response )
+
+					inicializar();
 				}
 	            if(configuracion.showMessage && configuracion.typereturn != returnType.JSON)
 	            {
@@ -78,6 +100,28 @@ var controller = {
 
 	    //Regresamos el jotason
 	    return result;
+    },
+    buscar: function(options,callback)
+    {
+    	if( !options )
+		{
+			console.log("Options is undefined in controller.call()");
+			return;
+		}
+		var configuracion = {
+		    parametros : {},
+		    url:'',
+		    showMessage:false
+		}
+	    configuracion = $.extend( configuracion , options );
+
+		var	response = controller.call({
+				url : configuracion.url,
+				parametros : configuracion.parametros,
+				typereturn : returnType.JSON
+			});
+
+		callback(response);
     }
 }
 

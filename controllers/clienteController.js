@@ -42,3 +42,9 @@ exports.guardarCliente = function(req,res,next)
       return res.send("cliente guardado correctamente.");
     }
 };
+
+//BUSQUEDA DEL CLIENTE
+exports.buscar = function(req,res,next)
+{
+  res.json([{ nombre : 'giovanny'},{nombre:'efra'}]);
+}

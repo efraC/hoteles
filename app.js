@@ -42,6 +42,8 @@ var cliente = require('./controllers/clienteController')
 app.get('/', login.login)
 app.get('/menu',menu.menu)
 app.get('/cliente',cliente.view)
+app.get('/cliente/buscar',cliente.buscar)
+
 app.post('/entrar', login.entrar)
 app.post('/salir',login.salir)
 
