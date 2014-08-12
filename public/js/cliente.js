@@ -4,6 +4,29 @@ var resultado_busqueda = null;
 function startAPP()
 {	
 
+	$("#btn-guardarCliente").on('click',guardar_cliente);
+}
+
+function guardar_cliente()
+{
+	controller.call(
+	{
+		 url:"/cliente/guardar",
+		 ajaxType:'POST',
+		 parametros:{
+			    	nombre: 		 $.trim($("#txt-nombreCliente").val()),
+			   		fechaNacimiento: $.trim($("#txt-fechaNacimiento").val()),
+			   		telefono: 		 $.trim($("#txt-telefono").val()),
+			   		direccion: 		 $.trim($("#txt-direccion").val())
+		 		}
+	},
+	function(response){
+		console.log(response);
+		$("#txt-nombreCliente").val("");
+		$("#txt-fechaNacimiento").val("");
+		$("#txt-telefono").val("");
+		$("#txt-direccion").val("");
+	});
 }
 
 //Funcion para buscar clientes

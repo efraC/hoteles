@@ -14,21 +14,22 @@ exports.view = function (req, res, next)
 }
 
 //GUARDAR NUEVO CLIENTE
-exports.guardarCliente = function(req,res,next) 
+exports.guardar = function(req,res,next) 
 {
 
 	//obtenemos el cliente a guardar por el request
- 	var nombre_req = req.body.nombre;
- 	var fechaNacimiento_req = req.body.fechaNacimiento;
- 	var telefono  = req.body.telefono;
- 	var direccion = req.body.direccion;
+ 	var nombre_req = req.body.nombre.toLowerCase();
+ 	var fechaNacimiento_req = req.body.fechaNacimiento.toLowerCase();
+ 	var telefono_req  = req.body.telefono.toLowerCase();
+ 	var direccion_req = req.body.direccion.toLowerCase();
 
 	// creamos el objeto cliente y lo guardamos
-    var cliente = new cliente({
-        nombre        : nombre,
-        fechaNacimiento   : fechaNacimiento,
-        telefono        : telefono,
-        direccion : direccion
+  var cliente  = mongoose.model('clientes');
+      cliente = new cliente({
+        nombre        : nombre_req,
+        fechaNacimiento   : fechaNacimiento_req,
+        telefono        : telefono_req,
+        direccion : direccion_req
     })
    cliente.save(onSaved);
    

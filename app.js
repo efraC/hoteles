@@ -39,12 +39,15 @@ var menu  = require('./controllers/menuController')
 var cliente = require('./controllers/clienteController')
 // Routes
 app.get('/', login.login)
-app.get('/menu',menu.menu)
-app.get('/cliente',cliente.view)
-app.get('/cliente/buscar',cliente.buscar)
-
 app.post('/entrar', login.entrar)
 app.post('/salir',login.salir)
+
+app.get('/menu',menu.menu)
+
+app.get('/cliente',cliente.view)
+app.get('/cliente/buscar',cliente.buscar)
+app.post('/cliente/guardar',cliente.guardar)
+
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

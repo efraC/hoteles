@@ -1,4 +1,7 @@
+<script type="text/javascript" src="/js/utils/v11-jquery.min.js"></script>
+<script type="text/javascript" src="/js/utils/core.js"></script>
 <script type="text/javascript" src="/js/cliente.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/cliente.css">
 
 <section class="view cliente">
 <section class="view-header clearfix">
@@ -19,14 +22,16 @@
 				<input class="busqueda" enter="buscar_cliente()" type="textbox" placeholder="Busqueda" controller="/cliente/buscar"></input>
 			</div>
 		</div>
-		<div>
-			<input type="text">
-			<input type="text">
+		<div class="view-cliente-content">
+			<input id="txt-nombreCliente" type="text" placeholder="Nombre del cliente">
+			<input id="txt-fechaNacimiento" type="text" placeholder="Fecha Nacimiento">
+			<input id="txt-telefono" type="text" placeholder="Telefono">
+			<input id="txt-direccion"type="text" placeholder="Direccion">
 		</div>
 	</section>
 <section class="view-footer clearfix">
 	<div class="botones">
-		<button class="btn btn-blue">Guardar</button>
+		<button id="btn-guardarCliente" class="btn btn-blue">Guardar</button>
 		<button class="btn btn-red">Cancelar</button>
 	</div>
 </section>
