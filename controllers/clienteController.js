@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+  var mongoose = require('mongoose');
 //var cliente  = mongoose.model('cliente');
 
 //RENDER THE VIEW LOGIN
