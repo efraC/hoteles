@@ -147,18 +147,19 @@ var mensaje = {
 			}
 			configuracion = $.extend( configuracion , opciones );
 
-			var notificacion ='<div class="nf-success nf-open">'
+			var notificacion ='<div class="animated fadeInRight nf-success nf-open">'
 				+'<div class="nf-icon"><span class="fa-check-circle-o"></span></div>'
 				+'<div class="nf-body">'
 					+'<span>'+configuracion.mensaje+'</span>'
 				+'</div>'
 			+'</div>';
-
-             $("#nf-container").append(notificacion);
-			 /*setTimeout(function(){	
+			$("#nf-container").append(notificacion);
+			//delay('$("#nf-container").addClass("fadeOutLeft");',3000)
+           
+			 setTimeout(function(){	
 					acciones.cerrar();
 					callback();
-			 	}, 5000);*/
+			 	}, 5000);
 	}
 }
 function delay( funcion, tiempo ){
