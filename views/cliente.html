@@ -11,18 +11,17 @@
 	</div>
 	<div class="view-acciones">
 		<span class="fa-refresh"></span>
-		<span class="fa-minus"></span>
 		<span class="fa-times"></span>
+	</div>
+	<div class="div-busqueda">
+		<div class="input-busqueda clearfix">
+			<input class="busqueda" enter="buscar_cliente()" type="textbox" placeholder="Busqueda" controller="/cliente/buscar"></input>
+			<span class="fa-search"></span>
+		</div>
 	</div>
 </section>
 	<section class="view-body">
-		<div class="div-busqueda">
-			<div class="input-busqueda clearfix">
-				<span class="fa-search"></span>
-				<input class="busqueda" enter="buscar_cliente()" type="textbox" placeholder="Busqueda" controller="/cliente/buscar"></input>
-			</div>
-		</div>
-		<div class="view-cliente-content">
+		<div class="view-body-content">
 			<input id="txt-nombreCliente" type="text" placeholder="Nombre del cliente">
 			<input id="txt-fechaNacimiento" type="text" placeholder="Fecha Nacimiento">
 			<input id="txt-telefono" type="text" placeholder="Telefono">

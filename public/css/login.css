@@ -4,13 +4,16 @@
 @import url("style.css");
 
 /*  --------------------------  */
-
+html {
+    height: 100%;
+}
 body
 {
 	background-image: url('/img/background-login.jpeg');
-	background-size: cover;
+	background-image: url('/img/spa_login.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
+	background-size: cover;
 	background-attachment: fixed;
 }
 .login
