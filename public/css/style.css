@@ -283,6 +283,7 @@ input:focus
 /*======================
     Estilos views
   ======================*/
+
 #views{
     max-width: 1200px;
     width: 60%;
@@ -331,3 +332,57 @@ input:focus
 .view-footer .botones{
     float: right;
 }
+
+/*======================
+    Estilos notificaciones
+  ======================*/
+  
+.nf-container 
+{
+    width: 350px;
+    height: 70px;
+    position: absolute;
+    right: 135px;
+    top: 45px;
+}
+.nf-open
+{
+  width: 100%;
+}
+.nf-close
+{
+  width: 0px;
+  white-space: nowrap;
+}
+.nf-success {
+    font-family: 'Open Sans';
+    color: #666;
+    height: 100%;
+    background: #fff;
+    border-radius: 5px;
+    position: absolute;
+    right: 0px;  
+    top: 0px;
+    /*white-space: nowrap;*/
+    -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.nf-icon {
+    width: 65px;
+    height: 70px;
+    position: absolute;
+    left: 3px;
+    border-right: 1px solid #e0e0da;
+}
+.nf-icon span {
+    font-size: 70px;
+    color: #2ecc71;
+}
+.nf-body
+{
+    position: absolute;
+    top: 10px;
+    left: 75px;
+    
+  }

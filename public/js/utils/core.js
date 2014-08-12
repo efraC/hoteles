@@ -70,7 +70,7 @@ var controller = {
 				}
 	            if(configuracion.showMessage && configuracion.typereturn != returnType.JSON)
 	            {
-					//mensaje.notificacion(response);
+					mensaje.notificacion(response);
 	            }
 	            if(configuracion.typereturn == returnType.JSON)
 	            {
@@ -83,7 +83,7 @@ var controller = {
 				}
 	        })
 	        .error(function (xhr, status) {
-	              //mensaje.notificacion(response +" " + status ,{tipo:'error'});
+	              mensaje.notificacion(response +" " + status ,{tipo:'error'});
 	              console.log("erorr :c" + " " + status);
 	        });
 
@@ -116,7 +116,51 @@ var controller = {
     }
 }
 
+var mensaje = { 
+    notificacion: function (mensaje_ , callback, opciones){
 
+    		if(typeof mensaje_ == "object" ){ //Si mensaje es objeto quiere decir que me mandaron las opciones!
+					opciones = mensaje_;
+					mensaje_ = 'Mensaje de la notificacion.';
+			}
+			if(typeof callback == "object"){ //Si callback es objeto quiere decir que me mandaron las opciones!
+					opciones = callback;
+			}
+			if(mensaje_ === undefined){
+				mensaje_ = 'Mensaje de notificacion.';
+			}
+
+			if (callback === undefined){
+				callback = function(){};
+			}
+
+			var configuracion = {
+				titulo  : 'Notificación: ',
+				mensaje : mensaje_,
+				tipo 	: 'exito',
+				icono 	: 'icon-checkmark-circle'
+			}
+			var acciones = {
+				cerrar : function(){
+					$("#nf-container").children().first().remove();
+				}
+			}
+			configuracion = $.extend( configuracion , opciones );
+
+			var notificacion ='<div class="nf-success nf-open">'
+				+'<div class="nf-icon"><span class="fa-check-circle-o"></span></div>'
+				+'<div class="nf-body">'
+					+'<span>'+configuracion.mensaje+'</span>'
+				+'</div>'
+			+'</div>';
+
+             $("#nf-container").append(notificacion);
+			 /*setTimeout(function(){	
+					acciones.cerrar();
+					callback();
+			 	}, 5000);*/
+	}
+}
 function delay( funcion, tiempo ){
 	var time = ( tiempo && typeof tiempo == 'number' ? tiempo : 2000)	
 	
