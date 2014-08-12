@@ -79,12 +79,15 @@ var controller = {
 
 				if ( callback && typeof callback == 'function' )
 				{
-					callback( $.parseJSON(response) );
+					if(configuracion.typereturn == returnType.JSON)
+						callback($.parseJSON(response));
+					else
+						callback( response );
+
 				}
 	        })
 	        .error(function (xhr, status) {
 	              mensaje.notificacion(response +" " + status ,{tipo:'error'});
-	              console.log("erorr :c" + " " + status);
 	        });
 
 	    //Regresamos el jotason

@@ -21,7 +21,6 @@ function guardar_cliente()
 		 		}
 	},
 	function(response){
-		console.log(response);
 		$("#txt-nombreCliente").val("");
 		$("#txt-fechaNacimiento").val("");
 		$("#txt-telefono").val("");
