@@ -7,7 +7,6 @@ exports.login = function (req, res, next)
 	if(req.session.usuario)
 	{
 		res.redirect('/menu');
-		console.log('algo2')
    		//res.json({ redirect : '/menu' });
  	}else
  	{
