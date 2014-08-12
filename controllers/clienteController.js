@@ -18,10 +18,10 @@ exports.guardar = function(req,res,next)
 {
 
 	//obtenemos el cliente a guardar por el request
- 	var nombre_req = req.body.nombre.toLowerCase();
- 	var fechaNacimiento_req = req.body.fechaNacimiento.toLowerCase();
- 	var telefono_req  = req.body.telefono.toLowerCase();
- 	var direccion_req = req.body.direccion.toLowerCase();
+ 	var nombre_req = req.body.nombre;
+ 	var fechaNacimiento_req = req.body.fechaNacimiento;
+ 	var telefono_req  = req.body.telefono;
+ 	var direccion_req = req.body.direccion;
 
 	// creamos el objeto cliente y lo guardamos
   var cliente  = mongoose.model('clientes');
@@ -50,7 +50,7 @@ exports.buscar = function(req,res,next)
    var clientes  = mongoose.model('clientes');
    var nombrecliente_req = req.query.nombre;
 
-   clientes.find({nombre: new RegExp(''+nombrecliente_req+'')}, function(err, clientes)
+   clientes.find({nombre: new RegExp(''+nombrecliente_req+'','i')}, function(err, clientes)
     {
         if(err) res.send(500, err.message);
         console.log(clientes);
