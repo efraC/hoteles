@@ -39,7 +39,7 @@ function buscar_cliente(){
 			parametros:{
 				nombre : $input.val()
 			},
-			url: $input.attr("controller")
+			url: '/cliente/buscar'
 		},function(response){
 			resultado_busqueda = null;
 
