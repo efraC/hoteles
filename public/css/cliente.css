@@ -1,3 +1,8 @@
+/*=============================
+	CSS con Estilos Generales
+  =============================*/
+@import url("style.css");
+
 .view-body-content{
 	display: table;
 	width: 90%;

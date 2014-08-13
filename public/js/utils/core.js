@@ -15,8 +15,6 @@ function inicializar(){
 				$('.busqueda-resultado').remove();
 		}
 	});
-
-	
 }
 
 /*Giovanny Reyes Ojeda.*/
@@ -58,14 +56,13 @@ var controller = {
 			.success(function (response){
 				if( configuracion.selector )
 				{
+
+					var $selector = ( $('#' + configuracion.selector) ? $('#' + configuracion.selector) : $('.' + configuracion.selector) )
+					$selector.html(response);
+					$selector.addClass("flipInX");
+					
 					configuracion.showMessage = false;
 					configuracion.typereturn = returnType.DEFAULT;
-					if( $('#' + configuracion.selector) )
-						$('#' + configuracion.selector).html( response )
-
-					else if( $('.' + configuracion.selector) )
-						$('.' + configuracion.selector).html( response )
-
 					inicializar();
 				}
 	            if(configuracion.showMessage && configuracion.typereturn != returnType.JSON)
@@ -145,18 +142,22 @@ var mensaje = {
 			}
 			var acciones = {
 				cerrar : function(){
+					$("#notify").removeClass("fadeInRight");
+					$("#notify").addClass("fadeOutRight");
 					$("#nf-container").children().first().remove();
 				}
 			}
 			configuracion = $.extend( configuracion , opciones );
 
-			var notificacion ='<div class="animated fadeInRight nf-success nf-open">'
+			var notificacion ='<div id="notify" class="animated fadeInRight nf-success nf-open">'
 				+'<div class="nf-icon"><span class="fa-check-circle-o"></span></div>'
 				+'<div class="nf-body">'
 					+'<span>'+configuracion.mensaje+'</span>'
 				+'</div>'
 			+'</div>';
 			$("#nf-container").append(notificacion);
+			
+
 			//delay('$("#nf-container").addClass("fadeOutLeft");',3000)
            
 			 setTimeout(function(){	

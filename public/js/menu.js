@@ -25,9 +25,8 @@ function salir()
 		url:'/salir',
 		ajaxType: 'POST',
 		typereturn: returnType.JSON
-	},function(response){
-		console.log(typeof response);
-		console.log(response);
+	},function(response)
+	{
 		window.location = response.redirect;
 	});
 }

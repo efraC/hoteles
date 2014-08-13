@@ -8,14 +8,12 @@ var bodyParser = require('body-parser');
 
 //CONEXION A BD
 var mongoose = require('mongoose');
-    //NOS CONECTAMOS A LA BD Y LE DECIMOS QUE SOLO USE 1 CONEXION
+//NOS CONECTAMOS A LA BD Y LE DECIMOS QUE SOLO USE 1 CONEXION
 mongoose.connect('mongodb://localhost/spa', { server: { poolSize: 1 } },function(err, res) {
     if(err) throw err;
     console.log('Conectado a la base de datos...');
 });
 
-
-var app = express();
 
 var app = express();
 // view engine setup
