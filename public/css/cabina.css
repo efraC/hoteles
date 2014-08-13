@@ -1,0 +1,28 @@
+/*=============================
+	CSS con Estilos Generales
+  =============================*/
+@import url("style.css");
+
+.view-body-content{
+	display: table;
+	width: 90%;
+	margin: 0 auto;
+}
+.view-body-content input {
+     margin: 10px;
+     font-size:15px;
+     display:block;
+}
+.div-busqueda{
+	float: right;
+	padding: 0;
+	width: auto;
+	margin-right: 5px;
+}
+.input-busqueda .busqueda {
+	width: 150px;
+}
+.input-busqueda span {
+	margin-right: 5px;
+	color: #888;
+}

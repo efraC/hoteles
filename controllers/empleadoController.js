@@ -1,12 +1,12 @@
-  var mongoose = require('mongoose');
-//var cliente  = mongoose.model('cliente');
+var mongoose = require('mongoose');
+
 
 //RENDER THE VIEW LOGIN
 exports.view = function (req, res, next)
 {
   if(req.session.usuario)
   {
-    res.render('cliente');
+    res.render('empleado');
   }else
   {
     res.render('login');
@@ -24,14 +24,14 @@ exports.guardar = function(req,res,next)
  	var direccion_req = req.body.direccion;
 
 	// creamos el objeto cliente y lo guardamos
-  var cliente  = mongoose.model('clientes');
-      cliente = new cliente({
+  var empleado  = mongoose.model('empleados');
+      empleado = new empleado({
         nombre        : nombre_req,
         fechaNacimiento   : fechaNacimiento_req,
         telefono        : telefono_req,
         direccion : direccion_req
     })
-   cliente.save(onSaved);
+   empleado.save(onSaved);
    
    function onSaved (err)
    {
@@ -40,21 +40,21 @@ exports.guardar = function(req,res,next)
         return next(err)
       }
 
-      return res.send("Cliente guardado correctamente.");
+      return res.send("Empleado guardado correctamente.");
     }
 };
 
 //BUSQUEDA DEL CLIENTE
 exports.buscar = function(req,res,next)
 {  
-   var clientes  = mongoose.model('clientes');
-   var nombrecliente_req = req.query.nombre;
+   var empleados  = mongoose.model('empleados');
+   var nombreempleado_req = req.query.nombre;
 
-   clientes.find({nombre: new RegExp(''+nombrecliente_req+'','i')}, function(err, clientes)
+   empleados.find({nombre: new RegExp(''+nombreempleado_req+'','i')}, function(err, empleados)
     {
         if(err) res.send(500, err.message);
-        console.log(clientes);
-        res.status(200).jsonp(clientes);
+        console.log(empleados);
+        res.status(200).jsonp(empleados);
     });
    
   //res.json([{ nombre : 'giovanny'},{nombre:'efra'}]);

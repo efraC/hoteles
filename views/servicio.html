@@ -1,0 +1,36 @@
+<script type="text/javascript" src="/js/utils/v11-jquery.min.js"></script>
+<script type="text/javascript" src="/js/utils/core.js"></script>
+<script type="text/javascript" src="/js/servicio.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/servicio.css">
+
+<section class="view servicio">
+<section class="view-header clearfix">
+	<div class="view-titulo">
+		<span class="fa-life-ring"></span>
+		<span>Servicios</span>
+	</div>
+	<div class="view-acciones">
+		<span class="fa-refresh"></span>
+		<span class="fa-times"></span>
+	</div>
+	<div class="div-busqueda">
+		<div class="input-busqueda clearfix">
+			<input class="busqueda" enter="buscar_servicios()" type="textbox" placeholder="Busqueda" controller="/servicio/buscar"></input>
+			<span class="fa-search"></span>
+		</div>
+	</div>
+</section>
+	<section class="view-body">
+		<div class="view-body-content">
+		<div class="view-servicio-content">
+			<input id="txt-nombreServicio" type="text" placeholder="Nombre del servicio">
+			<input id="txt-precioServicio" type="text" placeholder="Precio">
+		</div>
+	</section>
+<section class="view-footer clearfix">
+	<div class="botones">
+		<button id="btn-guardarServicio" class="btn btn-blue">Guardar</button>
+		<button class="btn btn-red">Cancelar</button>
+	</div>
+</section>
+</section>

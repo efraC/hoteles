@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
  
 var cliente_schema = new Schema({
   nombre   :   String,
-  fechaNacimiento   :   String,
+  fechaNacimiento   :   Date,
   telefono    :   String,
   direccion    :   String
 })

@@ -31,11 +31,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var user_model = require('./models/usuario')(app, mongoose);
 var cliente_model = require('./models/cliente')(app,mongoose);
+var empleado_model = require('./models/empleado')(app,mongoose);
+var cabina_model = require('./models/cabina')(app,mongoose);
+var servicio_model = require('./models/servicio')(app,mongoose);
 
 // Al principio
 var login  = require('./controllers/loginController')
 var menu  = require('./controllers/menuController')
 var cliente = require('./controllers/clienteController')
+var empleado = require('./controllers/empleadoController')
+var cabina = require('./controllers/cabinaController')
+var servicio = require('./controllers/servicioController')
+
 // Routes
 app.get('/', login.login)
 app.post('/entrar', login.entrar)
@@ -46,6 +53,18 @@ app.get('/menu',menu.menu)
 app.get('/cliente',cliente.view)
 app.get('/cliente/buscar',cliente.buscar)
 app.post('/cliente/guardar',cliente.guardar)
+
+app.get('/empleado',empleado.view)
+app.get('/empleado/buscar',empleado.buscar)
+app.post('/empleado/guardar',empleado.guardar)
+
+app.get('/cabina',cabina.view)
+app.get('/cabina/buscar',cabina.buscar)
+app.post('/cabina/guardar',cabina.guardar)
+
+app.get('/servicio',servicio.view)
+app.get('/servicio/buscar',servicio.buscar)
+app.post('/servicio/guardar',servicio.guardar)
 
 
 /// catch 404 and forward to error handler

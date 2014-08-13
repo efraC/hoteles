@@ -1,0 +1,38 @@
+<script type="text/javascript" src="/js/utils/v11-jquery.min.js"></script>
+<script type="text/javascript" src="/js/utils/core.js"></script>
+<script type="text/javascript" src="/js/empleado.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/empleado.css">
+
+<section class="view empleado">
+<section class="view-header clearfix">
+	<div class="view-titulo">
+		<span class="fa-male"></span>
+		<span>Empleados</span>
+	</div>
+	<div class="view-acciones">
+		<span class="fa-refresh"></span>
+		<span class="fa-times"></span>
+	</div>
+	<div class="div-busqueda">
+		<div class="input-busqueda clearfix">
+			<input class="busqueda" enter="buscar_empleado()" type="textbox" placeholder="Busqueda" controller="/empleado/buscar"></input>
+			<span class="fa-search"></span>
+		</div>
+	</div>
+</section>
+	<section class="view-body">
+		<div class="view-body-content">
+		<div class="view-empleado-content">
+			<input id="txt-nombreCliente" type="text" placeholder="Nombre del empleado">
+			<input id="txt-fechaNacimiento" type="text" placeholder="Fecha Nacimiento">
+			<input id="txt-telefono" type="text" placeholder="Telefono">
+			<input id="txt-direccion"type="text" placeholder="Direccion">
+		</div>
+	</section>
+<section class="view-footer clearfix">
+	<div class="botones">
+		<button id="btn-guardarEmpleado" class="btn btn-blue">Guardar</button>
+		<button class="btn btn-red">Cancelar</button>
+	</div>
+</section>
+</section>

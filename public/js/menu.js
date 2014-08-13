@@ -35,6 +35,7 @@ function salir()
 function abrir_contenido(controlador)
 {
 	var controlador_ = $(controlador).attr('controller');
+	$("#views").children().first().remove();
 	if(controlador_)
 	{
 		controller.call({
