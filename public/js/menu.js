@@ -23,8 +23,11 @@ function salir()
 {
 	controller.call({
 		url:'/salir',
-		ajaxType: 'POST'
+		ajaxType: 'POST',
+		typereturn: returnType.JSON
 	},function(response){
+		console.log(typeof response);
+		console.log(response);
 		window.location = response.redirect;
 	});
 }
